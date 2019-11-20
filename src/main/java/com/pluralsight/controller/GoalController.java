@@ -1,22 +1,26 @@
 package com.pluralsight.controller;
 
-import javax.validation.Valid;
-
+import com.pluralsight.model.Goal;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 
-import com.pluralsight.model.Goal;
+import javax.validation.Valid;
 
 @Controller
 @SessionAttributes("goal")
 public class GoalController {
 
-	@RequestMapping(value = "addGoal", method = RequestMethod.GET)
+	private static final Log LOGGER = LogFactory.getLog(GoalController.class);
+
+	@GetMapping("addGoal")
 	public String addGoal(Model model) {
 		Goal goal = new Goal();
 		goal.setMinutes(10);
@@ -25,17 +29,24 @@ public class GoalController {
 		return "addGoal";
 	}
 	
-	@RequestMapping(value = "addGoal", method = RequestMethod.POST)
+	@PostMapping("addGoal")
 	public String updateGoal(@Valid @ModelAttribute("goal") Goal goal, BindingResult result) {
 		
-		System.out.println("result has errors: " + result.hasErrors());
-		
-		System.out.println("Goal set: " + goal.getMinutes());
+		LOGGER.info("result has errors: " + result.hasErrors());
+
+		LOGGER.info("Goal set: " + goal.getMinutes());
 		
 		if(result.hasErrors()) {
 			return "addGoal";
 		}
 		
+		return "redirect:index.jsp";
+	}
+
+	@PostMapping("/endSession")
+	public String endSession(SessionStatus sessionStatus) {
+		sessionStatus.setComplete();
+
 		return "redirect:index.jsp";
 	}
 	

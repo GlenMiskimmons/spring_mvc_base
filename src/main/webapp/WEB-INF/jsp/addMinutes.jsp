@@ -94,7 +94,7 @@
       </a>
       <br/>
       <br/>
-      <form:form commandName="exercise">
+      <form:form modelAttribute="exercise">
       	<form:errors path="*" cssClass="errorblock" element="div" />
       	<div class="control-group">
           <label for="textinput1">

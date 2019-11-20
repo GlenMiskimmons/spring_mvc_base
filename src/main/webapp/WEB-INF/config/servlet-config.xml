@@ -34,7 +34,7 @@
 		
 		<property name="defaultViews">
 			<list>
-				<bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" />
+				<bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" />
 				<bean class="org.springframework.web.servlet.view.xml.MarshallingView">
 					<constructor-arg>
 						<bean class="org.springframework.oxm.xstream.XStreamMarshaller">
@@ -51,10 +51,10 @@
 	</mvc:interceptors>
 	
 	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver" p:defaultLocale="en"/>
-	
-	<bean id="messageSource" 
-	class="org.springframework.context.support.ResourceBundleMessageSource" 
-	p:basename="messages"></bean>
+
+	<bean id="messageSource"
+		  class="org.springframework.context.support.ResourceBundleMessageSource"
+		  p:basename="messages"/>
 	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" 
 	 p:prefix="/WEB-INF/jsp/" p:suffix=".jsp" p:order="2"/>

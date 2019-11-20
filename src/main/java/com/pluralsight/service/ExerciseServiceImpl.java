@@ -13,7 +13,7 @@ public class ExerciseServiceImpl implements ExerciseService {
 
 	public List<Activity> findAllActivities() {
 		
-		List<Activity> activities = new ArrayList<Activity>();
+		List<Activity> activities = new ArrayList<>();
 		
 		Activity run = new Activity();
 		run.setDesc("Run");

@@ -68,7 +68,7 @@
         </p>
       </div>
       
-      <form:form commandName="goal">
+      <form:form modelAttribute="goal">
 		<form:errors path="*" cssClass="errorblock" element="div" />
 			<label for="textinput1">
 	          Enter Minutes:
