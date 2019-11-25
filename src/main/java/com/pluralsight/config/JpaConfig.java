@@ -66,7 +66,7 @@ public class JpaConfig {
     private Properties additionalProperties() {
         Properties hibernateProperties = new Properties();
         hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
-        hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "none");
+        hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "create");
         hibernateProperties.setProperty("hibernate.format_sql", "true");
 
         return hibernateProperties;
