@@ -41,6 +41,30 @@ LOCK TABLES `goal` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `goals`
+--
+
+DROP TABLE IF EXISTS `goals`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `goals` (
+  `GOAL_ID` bigint(20) NOT NULL,
+  `MINUTES` int(11) DEFAULT NULL,
+  PRIMARY KEY (`GOAL_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `goals`
+--
+
+LOCK TABLES `goals` WRITE;
+/*!40000 ALTER TABLE `goals` DISABLE KEYS */;
+INSERT INTO `goals` VALUES (1,32);
+/*!40000 ALTER TABLE `goals` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `hibernate_sequence`
 --
 
@@ -58,7 +82,7 @@ CREATE TABLE `hibernate_sequence` (
 
 LOCK TABLES `hibernate_sequence` WRITE;
 /*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
-INSERT INTO `hibernate_sequence` VALUES (1);
+INSERT INTO `hibernate_sequence` VALUES (2);
 /*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -71,4 +95,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-25  3:57:15
+-- Dump completed on 2019-11-25 21:35:16
