@@ -48,3 +48,7 @@ Z
 *src/main/webapp/WEB-INF/jsp/addMinutes.jsp,8\4\84186ea7b1508e88201145f56388ea48a4fc3f2d
 X
 (src/main/webapp/WEB-INF/jsp/getGoals.jsp,b\e\bec6584084607b578a26d5fde120ccbb1a3b7dbc
+^
+.src/main/webapp/WEB-INF/jsp/getGoalReports.jsp,d\5\d57ecc109dd8a020b3246db7da09b27e2cb3ad97
+c
+3src/main/java/com/pluralsight/model/GoalReport.java,5\3\531e3ba713d8541742f27ce097a07680fc44bfcf

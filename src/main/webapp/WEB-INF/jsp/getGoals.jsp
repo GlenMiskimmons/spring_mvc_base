@@ -7,7 +7,7 @@ pageEncoding="ISO-8859-1"%>
 
 <head>
     <meta charset="utf-8">
-    <title>Goals Report</title>
+    <title>Goals</title>
     <meta name="Content-Type" content="text/html; charset=ISO-8859-1">
 </head>
 <body>

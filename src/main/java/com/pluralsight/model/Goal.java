@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.ArrayList;
@@ -15,7 +16,13 @@ import java.util.List;
 
 @Entity
 @Table(name ="goals")
+@NamedQuery(name = Goal.FIND_ALL_GOALS, query = "Select g from Goal g")
+@NamedQuery(name = Goal.FIND_GOAL_REPORTS, query = "Select new com.pluralsight.model.GoalReport(g.minutes, e.minutes, e.activity) " +
+				"from Goal g, Exercise e where g.id = e.goal.id")
 public class Goal {
+
+	public static final String FIND_ALL_GOALS = "findAllGoals";
+	public static final String FIND_GOAL_REPORTS = "findGoalReports";
 
 	@Id
 	@GeneratedValue

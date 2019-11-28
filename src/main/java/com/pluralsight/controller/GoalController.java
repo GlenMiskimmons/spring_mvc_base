@@ -1,6 +1,7 @@
 package com.pluralsight.controller;
 
 import com.pluralsight.model.Goal;
+import com.pluralsight.model.GoalReport;
 import com.pluralsight.service.GoalService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -64,6 +65,14 @@ public class GoalController {
 		model.addAttribute("goals", goals);
 
 		return "getGoals";
+	}
+
+	@GetMapping("/getGoalReports")
+	public String getGoalReports(Model model) {
+		List<GoalReport> goalReports = goalService.findAllGoalReports();
+		model.addAttribute("goalReports", goalReports);
+
+		return "getGoalReports";
 	}
 	
 }

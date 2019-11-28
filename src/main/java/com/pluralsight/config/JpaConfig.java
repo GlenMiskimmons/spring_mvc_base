@@ -43,6 +43,7 @@ public class JpaConfig {
     public LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean(HibernateJpaVendorAdapter vendorAdapter, DataSource dataSource) {
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setDataSource(dataSource);
+        factory.setPersistenceUnitName("punit");
         factory.setJpaVendorAdapter(vendorAdapter);
         factory.setPackagesToScan("com.pluralsight");
         factory.setJpaProperties(additionalProperties());
@@ -68,7 +69,6 @@ public class JpaConfig {
         hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
         hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "create");
         hibernateProperties.setProperty("hibernate.format_sql", "true");
-//        hibernateProperties.setProperty("hibernate.enable_lazy_load_no_trans", "true");
 
         return hibernateProperties;
     }
