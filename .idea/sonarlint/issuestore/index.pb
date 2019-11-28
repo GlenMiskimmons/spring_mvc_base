@@ -36,3 +36,7 @@ f
 6src/main/java/com/pluralsight/service/GoalService.java,e\3\e3e1905d8e177a289d0d89ec5facd45003661689
 j
 :src/main/java/com/pluralsight/service/GoalServiceImpl.java,9\b\9bd49f939f82b25becfd2a36876901809fc83d7b
+p
+@src/main/java/com/pluralsight/repository/ExerciseRepository.java,c\9\c936906b4a8c5da40973e2407cea5c82e5d1a23b
+t
+Dsrc/main/java/com/pluralsight/repository/ExerciseRepositoryImpl.java,2\f\2f47f01a940950e8fd68969657369e3f4ea1160c
