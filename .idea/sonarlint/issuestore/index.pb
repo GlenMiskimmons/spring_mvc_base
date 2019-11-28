@@ -40,3 +40,11 @@ p
 @src/main/java/com/pluralsight/repository/ExerciseRepository.java,c\9\c936906b4a8c5da40973e2407cea5c82e5d1a23b
 t
 Dsrc/main/java/com/pluralsight/repository/ExerciseRepositoryImpl.java,2\f\2f47f01a940950e8fd68969657369e3f4ea1160c
+U
+%src/main/webapp/WEB-INF/jsp/hello.jsp,d\6\d68b3a75012ca1cc336905603f2d3e8ff144bf4d
+W
+'src/main/webapp/WEB-INF/jsp/addGoal.jsp,c\e\cece6eca5ba699edc9fd1209e5eb7531c3125081
+Z
+*src/main/webapp/WEB-INF/jsp/addMinutes.jsp,8\4\84186ea7b1508e88201145f56388ea48a4fc3f2d
+X
+(src/main/webapp/WEB-INF/jsp/getGoals.jsp,b\e\bec6584084607b578a26d5fde120ccbb1a3b7dbc

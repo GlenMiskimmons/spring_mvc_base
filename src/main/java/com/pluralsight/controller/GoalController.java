@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @SessionAttributes("goal")
@@ -55,6 +56,14 @@ public class GoalController {
 		sessionStatus.setComplete();
 
 		return "redirect:index.jsp";
+	}
+
+	@GetMapping("/getGoals")
+	public String getGoals(Model model) {
+		List<Goal> goals = goalService.findAllGoals();
+		model.addAttribute("goals", goals);
+
+		return "getGoals";
 	}
 	
 }
