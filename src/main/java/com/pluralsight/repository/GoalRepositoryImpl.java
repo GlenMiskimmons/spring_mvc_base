@@ -10,21 +10,26 @@ import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
-@Repository("goalRepository")
-public class GoalRepositoryImpl implements GoalRepository {
+// @Repository("goalRepository")
+// public class GoalRepositoryImpl implements GoalRepository {
+public class GoalRepositoryImpl {
 
     @PersistenceContext
     private EntityManager entityManager;
 
-    @Override
+//    @Override
     public Goal save(Goal goal) {
-        entityManager.flush();
-        entityManager.persist(goal);
+        if(goal.getId() == null) {
+            entityManager.flush();
+            entityManager.persist(goal);
+        } else {
+            goal = entityManager.merge(goal);
+        }
 
         return goal;
     }
 
-    @Override
+//    @Override
     public List<Goal> loadAll() {
 //        Query query = entityManager.createQuery("Select g from Goal g");
         TypedQuery<Goal> query = entityManager.createNamedQuery(Goal.FIND_ALL_GOALS, Goal.class);
@@ -32,7 +37,7 @@ public class GoalRepositoryImpl implements GoalRepository {
         return query.getResultList();
     }
 
-    @Override
+//    @Override
     public List<GoalReport> findAllGoalReports() {
 //        Query query = entityManager.createQuery("Select new com.pluralsight.model.GoalReport(g.minutes, e.minutes, e.activity) " +
 //                "from Goal g, Exercise e where g.id = e.goal.id");

@@ -6,13 +6,14 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-@Repository("exerciseRepoistory")
-public class ExerciseRepositoryImpl implements ExerciseRepository {
+// @Repository("exerciseRepoistory")
+// public class ExerciseRepositoryImpl implements ExerciseRepository {
+public class ExerciseRepositoryImpl {
 
     @PersistenceContext
     private EntityManager entityManager;
 
-    @Override
+//    @Override
     public Exercise save(Exercise exercise) {
         entityManager.persist(exercise);
         entityManager.flush();

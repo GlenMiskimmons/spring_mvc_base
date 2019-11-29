@@ -24,7 +24,7 @@ public class GoalServiceImpl implements GoalService {
     @Override
     @Transactional
     public List<Goal> findAllGoals() {
-        List<Goal> goals = goalRepository.loadAll();
+        List<Goal> goals = goalRepository.findAll();
         // Need to call a list method from getExercises() to trigger lazy load in transaction.
         goals.get(0).getExercises().size();
 

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -28,9 +29,15 @@ public class GoalController {
 	private static final Log LOGGER = LogFactory.getLog(GoalController.class);
 
 	@GetMapping("addGoal")
-	public String addGoal(Model model) {
-		Goal goal = new Goal();
-		goal.setMinutes(10);
+	public String addGoal(Model model, HttpSession session) {
+//		Goal goal = new Goal();
+		Goal goal = (Goal) session.getAttribute("goal");
+
+		if(goal == null) {
+			goal = new Goal();
+			goal.setMinutes(10);
+		}
+
 		model.addAttribute("goal", goal);
 		
 		return "addGoal";
